@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Week 1{% endblock title %} . Django Exercises</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+  <body>
+    <header>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url "home" %}">Django Assignment 1</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation" fdprocessedid="gef8k">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show" id="navbarColor02" style="">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url "home" %}">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "about" %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "hello" %}">Hello</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock content %} 
+    </main>
+    <footer>
+        <footer class="py-3 my-4"> <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="{% url "home" %}" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="{% url "about" %}" class="nav-link px-2 text-body-secondary">About</a></li> 
+        <li class="nav-item"><a href="{% url "hello" %}" class="nav-link px-2 text-body-secondary">Hello</a></li> 
+        </ul> 
+        <p class="text-center text-body-secondary">IT373 Week 1 . Django MVT . EVSU</p> </footer>
+    </footer>
+  </body>
+</html>
